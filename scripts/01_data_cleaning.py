@@ -4,18 +4,18 @@ import os
 
 # --- PATHS ---
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-RAW_PATH = os.path.join(SCRIPT_DIR, '..', 'data', 'raw', 'gsearch_jobs.csv')
+RAW_PATH = os.path.join(SCRIPT_DIR, '..', 'data', 'raw', 'ai_job_dataset.csv')
 PROCESSED_PATH = os.path.join(SCRIPT_DIR, '..', 'data', 'processed', 'cleaned_skills_data.csv')
 
 print(f"🔄 Loading raw data from: {RAW_PATH}")
 df = pd.read_csv(RAW_PATH)
 print(f"   ✅ Loaded {len(df):,} rows.")
 
-# --- STEP 1: Standardize column names to what downstream scripts expect ---
+# --- STEP 1: Rename columns to match pipeline standard ---
 df = df.rename(columns={
-    "salary_standardized": "salary_year_avg",  # best normalized salary column
-    "description_tokens":  "job_skills",        # skill tokens for this dataset
-    "title":               "job_title",
+    "salary_usd":       "salary_year_avg",  # this dataset uses salary_usd
+    "required_skills":  "job_skills",        # this dataset uses required_skills
+    "job_title":        "job_title",         # already correct
 })
 
 # --- STEP 2: Drop rows with null salaries ---
