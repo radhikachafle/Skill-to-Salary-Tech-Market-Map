@@ -7,7 +7,7 @@ command the highest salaries in today's AI engineering job market.
 ---
 
 ## Dashboard Preview
-![Skill to Salary Dashboard](dashboard/dashboard_preview1.png)
+![Skill to Salary Dashboard](dashboard_preview1.png/dashboard_preview1.png)
 
 ---
 
