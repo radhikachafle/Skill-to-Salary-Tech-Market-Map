@@ -16,14 +16,14 @@ load_dotenv(os.path.join(SCRIPT_DIR, '..', '.env'))
 # --- MySQL CONNECTION CONFIG ---
 # Safely pull from the .env file, with fallback defaults just in case
 DB_CONFIG = {
-    "host":     os.getenv("DB_HOST", "localhost"),
-    "port":     int(os.getenv("DB_PORT", 3306)),
-    "user":     os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASSWORD", ""),
-    "database": os.getenv("DB_NAME", "skill_salary_db")
+    "host":     "localhost",
+    "port":     3306,
+    "user":     "root",
+    "password": "admin123",        # ← updated
+    "database": "skill_salary_db"
 }
 
-MIN_POSTINGS = 50
+MIN_POSTINGS = 100
 
 # ── STEP 1: Load cleaned CSV ─────────────────────────────────────────────────
 print("🔄 Loading cleaned skills data...")
